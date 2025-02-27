@@ -11,7 +11,7 @@ exports.verifytoken= (req,res,next)=>{
       }
      
      
-      const verifytoken=jwt.verify(token,process.env.Secret_Key)
+      const verifytoken=jwt.verify(token,'my_key')
       if(verifytoken){
           req.admin=verifytoken
           next()

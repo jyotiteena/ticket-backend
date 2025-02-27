@@ -55,7 +55,7 @@ exports.login = async (req, res) => {
         role: admin.q_role_id
       }
 
-      const token = jwt.sign(payload,process.env.Secret_Key,{ expiresIn: '1h' })
+      const token = jwt.sign(payload,'my_key',{ expiresIn: '1h' })
      
       res.cookie('admin', token, { 
         httpOnly: true, 
